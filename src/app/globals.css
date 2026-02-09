@@ -1,33 +1,78 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #f0fdf4;
-  --color-brand-100: #dcfce7;
-  --color-brand-200: #bbf7d0;
-  --color-brand-300: #86efac;
-  --color-brand-400: #4ade80;
-  --color-brand-500: #22c55e;
-  --color-brand-600: #16a34a;
-  --color-brand-700: #15803d;
-  --color-brand-800: #166534;
-  --color-brand-900: #14532d;
-  --color-brand-950: #052e16;
+  /* === LIGHT THEME COLORS (warm, food-friendly: red + green) === */
+  /* Primary: warm tomato red — appetizing, inviting */
+  --color-brand-50: #fef2f2;
+  --color-brand-100: #fee2e2;
+  --color-brand-200: #fecaca;
+  --color-brand-300: #fca5a5;
+  --color-brand-400: #f87171;
+  --color-brand-500: #dc2626;
+  --color-brand-600: #b91c1c;
+  --color-brand-700: #991b1b;
+  --color-brand-800: #7f1d1d;
+  --color-brand-900: #611515;
+  --color-brand-950: #450a0a;
 
-  --color-accent-50: #fff1f2;
-  --color-accent-100: #ffe4e6;
-  --color-accent-200: #fecdd3;
-  --color-accent-300: #fda4af;
-  --color-accent-400: #fb7185;
-  --color-accent-500: #f43f5e;
-  --color-accent-600: #e11d48;
-  --color-accent-700: #be123c;
-  --color-accent-800: #9f1239;
-  --color-accent-900: #881337;
-  --color-accent-950: #4c0519;
+  /* Accent: fresh herb green — natural, fresh ingredients */
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #bbf7d0;
+  --color-accent-300: #86efac;
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e;
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
+  --color-accent-800: #166534;
+  --color-accent-900: #14532d;
+  --color-accent-950: #052e16;
+
+  /* Warm neutral backgrounds */
+  --color-warm-50: #fefdfb;
+  --color-warm-100: #fdf8f0;
+  --color-warm-200: #f5ebe0;
 
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* === LIGHT MODE: warm cream backgrounds === */
+body {
+  background-color: var(--color-warm-50);
+}
+
+/* === DARK MODE: elegant, stylish, deep === */
+.dark body {
+  background: linear-gradient(180deg, #0c0a09 0%, #1c1917 100%);
+}
+
+/* Dark mode overrides — rich charcoal with warm gold accents */
+.dark {
+  --color-brand-50: #fffbeb;
+  --color-brand-100: #fef3c7;
+  --color-brand-200: #fde68a;
+  --color-brand-300: #fcd34d;
+  --color-brand-400: #fbbf24;
+  --color-brand-500: #d97706;
+  --color-brand-600: #b45309;
+  --color-brand-700: #92400e;
+  --color-brand-800: #78350f;
+  --color-brand-900: #633112;
+  --color-brand-950: #451a03;
+
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-200: #fef08a;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #ca8a04;
+  --color-accent-600: #a16207;
+  --color-accent-700: #854d0e;
+  --color-accent-800: #713f12;
+  --color-accent-900: #5c3210;
+  --color-accent-950: #422006;
 }

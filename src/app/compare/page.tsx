@@ -29,8 +29,8 @@ function ScoreCircle({ label, before, after }: { label: string; before: number; 
           {after}
         </span>
       </div>
-      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
-      <span className="text-xs text-slate-500 dark:text-slate-400">
+      <span className="text-sm font-medium text-slate-700 dark:text-stone-300">{label}</span>
+      <span className="text-xs text-stone-500 dark:text-stone-400">
         {before} → {after}{" "}
         <span className={delta > 0 ? "text-green-500" : delta < 0 ? "text-red-500" : ""}>
           ({delta > 0 ? "+" : ""}{delta})
@@ -51,7 +51,7 @@ export default function ComparePage() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         {/* Score Comparison */}
         <section className="mb-12">
-          <h2 className="mb-6 text-center text-xl font-bold text-slate-900 dark:text-white">
+          <h2 className="mb-6 text-center text-xl font-bold text-stone-900 dark:text-white">
             Lighthouse Scores
           </h2>
           <div className="flex flex-wrap justify-center gap-8">
@@ -64,15 +64,15 @@ export default function ComparePage() {
 
         {/* Side by Side */}
         <section>
-          <h2 className="mb-6 text-center text-xl font-bold text-slate-900 dark:text-white">
+          <h2 className="mb-6 text-center text-xl font-bold text-stone-900 dark:text-white">
             Side by Side
           </h2>
           <div className="grid gap-6 lg:grid-cols-2">
             <div>
-              <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
                 Original
               </h3>
-              <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+              <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-stone-800">
                 <iframe
                   src="http://www.seetreff.ch/"
                   className="h-[600px] w-full"
@@ -82,7 +82,7 @@ export default function ComparePage() {
               </div>
             </div>
             <div>
-              <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <h3 className="mb-2 text-center text-sm font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
                 CopyCat Clone
               </h3>
               <div className="overflow-hidden rounded-xl border border-brand-200 dark:border-brand-800">
@@ -97,7 +97,7 @@ export default function ComparePage() {
           </div>
         </section>
 
-        <div className="mt-12 text-center text-sm text-slate-500 dark:text-slate-400">
+        <div className="mt-12 text-center text-sm text-stone-500 dark:text-stone-400">
           <p>Built by ÆON CopyCat — Automated website cloning &amp; improvement pipeline</p>
         </div>
       </div>

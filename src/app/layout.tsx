@@ -46,7 +46,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200">
+      <body className="min-h-screen bg-warm-50 text-stone-800 antialiased dark:bg-stone-950 dark:text-stone-200">
         <ThemeProvider>
           <Header />
           <main id="main-content">{children}</main>

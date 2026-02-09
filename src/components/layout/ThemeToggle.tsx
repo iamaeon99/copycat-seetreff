@@ -8,7 +8,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(resolved === 'dark' ? 'light' : 'dark')}
-      className="rounded-full p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors"
+      className="rounded-full p-2 text-slate-600 hover:bg-slate-100 dark:text-stone-400 dark:hover:bg-slate-800 transition-colors"
       aria-label={resolved === 'dark' ? 'Zum hellen Modus wechseln' : 'Zum dunklen Modus wechseln'}
     >
       {resolved === 'dark' ? (
