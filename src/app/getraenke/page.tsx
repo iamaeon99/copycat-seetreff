@@ -60,7 +60,7 @@ const bioweine = [
 export default function GetraenkePage() {
   return (
     <>
-      <PageHeader title="Getränke" subtitle="Alkoholfreie Getränke, Biere und Weine" />
+      <PageHeader title="Getränke" subtitle="Alkoholfreie Getränke, Biere und Weine" image="/images/drinks-header.jpg" />
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <MenuTable items={alkoholfrei} title="Alkoholfreie Getränke" />
         <MenuTable items={biere} title="Biere" />

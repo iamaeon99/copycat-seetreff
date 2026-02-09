@@ -72,7 +72,7 @@ const salate = [
 export default function SnacksPage() {
   return (
     <>
-      <PageHeader title="Snacks" subtitle="Kebab, Pide, Klassiker und frische Salate" />
+      <PageHeader title="Snacks" subtitle="Kebab, Pide, Klassiker und frische Salate" image="/images/snacks-header.jpg" />
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <MenuTable items={kebab} title="Kebab" />
         <MenuTable items={pide} title="Pide" />

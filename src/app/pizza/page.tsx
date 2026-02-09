@@ -46,6 +46,7 @@ export default function PizzaPage() {
       <PageHeader
         title="Pizzakarte"
         subtitle="Jede Pizza (32cm) mit Tomatensauce, Mozzarella und Oregano. Jede weitere Zutat ab CHF 1.50"
+        image="/images/pizza-header.jpg"
       />
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <MenuTable items={pizzas} />
