@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,7 +13,13 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-brand-900 px-4 py-20 text-white sm:py-28">
-        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5" />
+        <Image
+          src="/images/pizza-hero.jpg"
+          alt="Frische Pizza"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
         <div className="relative mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
             Pizza &amp; Kebab
@@ -140,26 +147,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Food Gallery */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 dark:text-white">Frisch aus unserer Küche</h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/pizza-hero.jpg" alt="Frische Pizza aus dem Ofen" fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-lg font-bold text-white">Unsere Pizzen</p>
+          </div>
+          <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/kebab.jpg" alt="Döner Kebab" fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-lg font-bold text-white">Kebab & Pide</p>
+          </div>
+          <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image src="/images/salad.jpg" alt="Frischer Salat" fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-lg font-bold text-white">Salate & Bowls</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Restaurant */}
+      <section className="bg-slate-50 px-4 py-16 dark:bg-slate-800/50">
+        <div className="mx-auto max-w-6xl sm:px-6">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+              <Image src="/images/restaurant.jpg" alt="Restaurant Seetreff" fill className="object-cover" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Willkommen im Seetreff</h2>
+              <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
+                Seit Jahren Ihr Treffpunkt für frische Pizza und Kebab an der Goldküste.
+                Ob vor Ort geniessen oder bequem nach Hause liefern lassen — bei uns
+                wird alles frisch zubereitet.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="tel:+41449912222"
+                  className="inline-flex items-center rounded-full bg-brand-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-700"
+                >
+                  📞 Jetzt bestellen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Menu Links */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 dark:text-white">Unsere Karte</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { href: '/pizza', label: 'Pizza', emoji: '🍕', desc: '30 Sorten ab CHF 14' },
-            { href: '/snacks', label: 'Snacks', emoji: '🥙', desc: 'Kebab, Pide & mehr' },
-            { href: '/getraenke', label: 'Getränke', emoji: '🥤', desc: 'Soft Drinks, Bier, Wein' },
-            { href: '/lageplan', label: 'Lageplan', emoji: '📍', desc: 'So finden Sie uns' },
+            { href: '/pizza', label: 'Pizza', img: '/images/pizza-hero.jpg', desc: '30 Sorten ab CHF 14' },
+            { href: '/snacks', label: 'Snacks', img: '/images/kebab.jpg', desc: 'Kebab, Pide & mehr' },
+            { href: '/getraenke', label: 'Getränke', img: '/images/drinks.jpg', desc: 'Soft Drinks, Bier, Wein' },
+            { href: '/lageplan', label: 'Lageplan', img: '/images/restaurant.jpg', desc: 'So finden Sie uns' },
           ].map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-brand-700"
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition-all hover:border-brand-300 hover:shadow-md dark:border-slate-800 dark:hover:border-brand-700"
             >
-              <span className="text-4xl">{item.emoji}</span>
-              <h3 className="mt-3 text-lg font-bold text-slate-900 group-hover:text-brand-600 dark:text-white dark:group-hover:text-brand-400">
-                {item.label}
-              </h3>
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+              <div className="relative aspect-[4/3]">
+                <Image src={item.img} alt={item.label} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+              </div>
+              <div className="absolute bottom-0 p-4">
+                <h3 className="text-lg font-bold text-white">{item.label}</h3>
+                <p className="text-sm text-slate-200">{item.desc}</p>
+              </div>
             </Link>
           ))}
         </div>
